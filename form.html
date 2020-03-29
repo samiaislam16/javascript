@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="utf-8">
+	<title></title>
+
+</head>
+
+<body>
+	<form onsubmit="return false;" action="" method="GET" id="loginForm">
+
+		Email:<input type="email"  name="email" id="email" required/>
+		<br><br>
+		Password:<input type="text" name="pwd" id="password" required /> <span id="pwderrormsg" style="color: red"></span>
+		<br><br>
+		<input type="submit" id="submit" required />
+		
+
+
+	</form>
+
+	<div id = "showdata">
+		
+	</div>
+
+	<script type="text/javascript">
+
+		document.querySelector("#loginForm").addEvenListener("submit",function() {
+
+	        var pwd = document.querySelector("#password").value;
+			var countpwd = pwd.length;
+
+			if (countpwd<=8) 
+			{
+
+				document.querySelector("#pwderrormsg").innerHTML="Password is too short!";
+			}
+
+			else
+			{
+				document.querySelector("#showdata").innerHTML=pwd;
+			}
+
+			}
+
+			
+			
+		});
+
+
+		
+
+	</script>
+
+</body>
+</html>
